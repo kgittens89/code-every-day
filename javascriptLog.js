@@ -11,7 +11,7 @@ function duplicateCount(text) {
 
 // Today's Progress: Getting back into it
 
-// Thoughts: 
+// Thoughts: Ended up finishing this 3/02/22. Threw me for a loop initiall because I'm rusty, but it came together in the end. I definitely see that coding everyday, or just doing the katas/challenges is necessary. Anyway, I liked the use of the regular expressions, super clean. I also like doing the reverse(!) check initially to if string is empty vs trying to add in logic for it later. It shortens the code and just gets that use case out of the way. 
 
 // Link(s) to work: https://www.codewars.com/kata/55c45be3b2079eccff00010f/train/javascript
 
@@ -38,7 +38,6 @@ function order(words) {
     // Check each word for number
     seperateWords.forEach((word) => {
         let match = word.match(/\d+/g);
-        console.log(match.toString())
         arr[match.toString() - 1] = word;  
     })
     
