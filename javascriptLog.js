@@ -2,12 +2,12 @@
 // Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
 
 function duplicateCount(text) {
-	// iterate over string
+    // iterate over string
     //  
 }
 
 
-// Day 1: 03/01/22 11:44pm
+// Day 1: 03/01/22 11:44am
 
 // Today's Progress: Getting back into it
 
@@ -30,11 +30,11 @@ function duplicateCount(text) {
 
 function order(words) {
     if (!words.length) return ''
-
+    
     // seperate string into individual words in array
     let seperateWords = words.split(' ')
     let arr = []
-
+    
     // Check each word for number
     seperateWords.forEach((word) => {
         let match = word.match(/\d+/g);
@@ -47,3 +47,34 @@ function order(words) {
 // console.log(order('is2 Thi1s T4est 3a'));
 // console.log(order(''));
 // console.log(order('4of Fo1r pe6ople g3ood th5e the2'));
+
+
+
+// Day : 03/03/22 
+
+// Today's Progress: Getting back into it
+
+// Thoughts: Boy this one threw me. And to think the answer was just n**3 lol. Anyway, I definitely felt the 'layered' thinking is rusty. Need to do more of these. .reduce() didn't feel to terrible to use though . 
+
+// Link(s) to work: https://www.codewars.com/kata/55fd2d567d94ac3bc9000064/train/javascript
+
+function rowSumOddNumbers(n) {  
+    let triangleArr = []
+    let count = 1
+    
+    for (let i = 0; i < n; i++) {
+        let subArr = []
+        for (let j = 0; j <= i; j++) {
+            subArr.push(count)
+            count += 2
+        }
+        triangleArr.push(subArr)
+    }
+    
+    return triangleArr[n - 1].reduce((a, b) => a + b)
+}
+
+
+// rowSumOddNumbers(4);
+// rowSumOddNumbers(1);
+// rowSumOddNumbers(42);
