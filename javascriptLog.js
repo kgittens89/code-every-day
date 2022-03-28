@@ -181,6 +181,43 @@ function smallestPositiveInteger(A) {
 	return sortedArr[sortedArr.length - 1] + 1;
 }
 
-console.log(smallestPositiveInteger([1, 3, 6, 4, 1, 2]))
-console.log(smallestPositiveInteger([1, 2, 3]))
-console.log(smallestPositiveInteger([-1, -3]))
+// console.log(smallestPositiveInteger([1, 3, 6, 4, 1, 2]))
+// console.log(smallestPositiveInteger([1, 2, 3]))
+// console.log(smallestPositiveInteger([-1, -3]))
+
+
+// A Nice array is defined to be an array where for every value n in the array, there is also an element n - 1 or n + 1 in the array.
+
+// [2, 10, 9, 3] is a nice array because
+
+//  2 =  3 - 1
+// 10 =  9 + 1
+//  3 =  2 + 1
+//  9 = 10 - 1
+
+// [4, 2, 3] is a nice array because
+
+// 4 = 3 + 1
+// 2 = 3 - 1
+// 3 = 2 + 1 (or 3 = 4 - 1)
+
+// [4, 2, 1] is a not a nice array because
+
+// for n = 4, there is neither n - 1 = 3 nor n + 1 = 5
+
+function isNice(arr) {
+	if (!arr.length) {
+		return false
+	} else {
+		return arr.every(num => {
+			return arr.includes(num + 1) || arr.includes(num - 1)
+		})
+	}
+}
+
+
+// console.log(isNice([2, 10, 9, 3]))
+// console.log(isNice([3, 4, 5, 7]))
+// console.log(isNice([4, 2, 3]))
+// console.log(isNice([4, 2, 1]))
+// console.log(isNice([]))
