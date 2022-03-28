@@ -139,3 +139,48 @@ reverseWords('The quick brown fox jumps over the lazy dog.');
 reverseWords('apple');
 reverseWords('a b c d');
 reverseWords('double  spaced  words');
+
+
+// Day: 3/20/22 10:43pm
+
+// Today's Progress: Feel like I need to work through one 
+
+// Thoughts:
+
+// Link(s) to work: https://www.codewars.com/kata/514a024011ea4fb54200004b/train/javascript
+
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+// domainName('http://github.com/carbonfive/raygun') == 'github';
+// domainName('http://www.zombie-bites.com') == 'zombie-bites';
+// domainName('https://www.cnet.com') == 'cnet';
+
+function domainName(url) {
+	//your code here
+	let fullUrl = new URL(url)
+	console.log(fullUrl)
+	let hostName = fullUrl.hostname
+	hostName = hostName.substring(0, hostName.indexOf('.'))
+	console.log(hostName)
+
+}
+
+// domainName('http://google.com');
+// domainName('http://google.co.jp');
+// domainName('www.xakep.ru');
+// domainName('https://youtube.com');
+
+
+function smallestPositiveInteger(A) {
+	const sortedArr = A.sort()
+	for (let i = 0; i < sortedArr.length; i++) {
+		if (!sortedArr.includes(i) && i > 0) {
+			return i
+		} 
+	}
+	return sortedArr[sortedArr.length - 1] + 1;
+}
+
+console.log(smallestPositiveInteger([1, 3, 6, 4, 1, 2]))
+console.log(smallestPositiveInteger([1, 2, 3]))
+console.log(smallestPositiveInteger([-1, -3]))
