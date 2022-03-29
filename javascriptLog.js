@@ -221,3 +221,43 @@ function isNice(arr) {
 // console.log(isNice([4, 2, 3]))
 // console.log(isNice([4, 2, 1]))
 // console.log(isNice([]))
+
+
+// function solution(S, K) {
+// 	const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+// 	let dayIndex = days.indexOf(S)
+// 	return days[(K + dayIndex) % 7];
+// }
+
+// console.log(solution('Wed', 2))
+// console.log(solution('Sat', 23));
+
+
+// function solution(A) {
+// 	if (A.length <= 2) return A.length;
+// 	let maxLength = 0;
+// 	for (i = 0; i < A.length - 1; i++) {
+// 		let curLength = 0;
+// 		let num1 = A[i];
+// 		let num2 = A[i + 1];
+
+// 		A.forEach(num => {
+// 			if (num === num1 || num === num2) {
+// 				curLength++
+// 				if (curLength > maxLength) {
+// 					maxLength = curLength
+// 				}
+// 			} else {
+// 				curLength = 0
+// 			}
+// 		})
+// 	}
+// 	return maxLength;
+// }
+
+// console.log(solution([4, 2, 2, 4, 2]));
+// console.log(solution([1, 2, 3, 2]));
+// console.log(solution([0, 5, 4, 4, 5, 12]));
+// console.log(solution([4, 4]));
+
+
