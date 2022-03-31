@@ -261,3 +261,47 @@ function isNice(arr) {
 // console.log(solution([4, 4]));
 
 
+// Day:3/30/22
+
+// Today's Progress: Well today I made it through to the technical round at Revelry!! 
+
+// Thoughts:
+
+// Link(s) to work: https://www.codewars.com/kata/523a86aa4230ebb5420001e1/train/javascript
+
+// What is an anagram? Well, two words are anagrams of each other if they both contain the same letters. For example:
+
+// 'abba' & ('baab' == true);
+
+// 'abba' & ('bbaa' == true);
+
+// 'abba' & ('abbba' == false);
+
+// 'abba' & ('abca' == false);
+
+// Write a function that will find all the anagrams of a word from a list. You will be given two inputs a word and an array with words. You should return an array of all the anagrams or an empty array if there are none. For example:
+
+function anagrams(word, words) {
+	// seperate word into array of individual letters
+	const wordToLetters = word.split('').sort().join('')
+	console.log(wordToLetters)
+	// iterate through each word in words array
+	// let anagrams = []
+	let anagrams = words.filter((word, index) => {
+		return word.split('').sort().join('') === wordToLetters
+		// break each word down into letters and compare to first 'word>letters' array to broken down word. 
+		// const wordToCompare = word.split('').sort().join('')
+		// console.log(wordToCompare)
+		// // if letters match, push into array to hold anagrams
+		// if (wordToCompare === wordToLetters) {
+		// 	anagrams.push(words[index])
+		// }
+	})
+	// console.log(words)
+	// return anagram array
+	return anagrams
+}
+
+console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
+console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
+console.log(anagrams('laser', ['lazing', 'lazy', 'lacer']));
