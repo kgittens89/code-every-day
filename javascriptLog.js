@@ -284,7 +284,7 @@ function isNice(arr) {
 function anagrams(word, words) {
 	// seperate word into array of individual letters
 	const wordToLetters = word.split('').sort().join('')
-	console.log(wordToLetters)
+	// console.log(wordToLetters)
 	// iterate through each word in words array
 	// let anagrams = []
 	let anagrams = words.filter((word, index) => {
@@ -302,6 +302,41 @@ function anagrams(word, words) {
 	return anagrams
 }
 
-console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
-console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
-console.log(anagrams('laser', ['lazing', 'lazy', 'lacer']));
+// console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
+// console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
+// console.log(anagrams('laser', ['lazing', 'lazy', 'lacer']));
+
+
+
+// Day: 4/5/22
+
+// Today's Progress:
+
+// Thoughts:
+
+// Link(s) to work: https://www.codewars.com/kata/520b9d2ad5c005041100000f/train/javascript
+
+// Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+// pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+// pigIt('Hello world !');     // elloHay orldway !
+
+function pigIt(str) {
+	let words = str.split(' ')
+	// console.log(words)
+	let pigLatin = words.map(word => {
+		let splitWord = word.split('')
+		// let firstLetter = splitWord.shift()
+		// console.log(firstLetter)
+		// let pig = splitWord.splice(splitWord.length, 0, firstLetter);
+		if ((/[a-zA-Z]/).test(splitWord)) {
+			splitWord.splice(splitWord.length, 0, `${splitWord.shift()}ay`);
+		}
+		return splitWord.join('')
+		// console.log(splitWord.splice(splitWord.shift(), 0, word.length));
+	})
+	return pigLatin.join(' ')
+}
+
+console.log(pigIt('Pig latin is cool'))
+console.log(pigIt('This is my string !'))
