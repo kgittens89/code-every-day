@@ -370,9 +370,108 @@ function descendingOrder(n) {
 
 
 
-console.log(descendingOrder(0))
-console.log(descendingOrder(1))
-console.log(descendingOrder(111))
-console.log(descendingOrder(15))
-console.log(descendingOrder(1021))
-console.log(descendingOrder(123456789))
+// console.log(descendingOrder(0))
+// console.log(descendingOrder(1))
+// console.log(descendingOrder(111))
+// console.log(descendingOrder(15))
+// console.log(descendingOrder(1021))
+// console.log(descendingOrder(123456789))
+
+
+
+
+// Day:4/18/22
+
+// Today's Progress:
+
+// Thoughts:
+
+// Link(s) to work: https://www.codewars.com/kata/54da5a58ea159efa38000836/train/javascript
+
+
+// Given an array of integers, find the one that appears an odd number of times.
+
+// There will always be only one integer that appears an odd number of times.
+
+function findOdd(A) {
+	if (A.length === 1) return A[0]
+	let count;
+	let oddNumber;
+	A.forEach((num, i, arr) => {
+		count = arr.filter(numbers => num === numbers)
+		console.log(count)
+		if(!count.length % 2 === 0) oddNumber = num
+	})
+	return oddNumber
+}
+
+// console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
+// console.log(findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]));
+// console.log(findOdd([20, 1, 1, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5]));
+// console.log(findOdd([10]));
+// console.log(findOdd([1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1]));
+// console.log(findOdd([5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10]));
+
+
+
+
+
+// Link : https://www.codewars.com/kata/57eb8fcdf670e99d9b000272/train/javascript
+
+// Given a string of words, you need to find the highest scoring word.
+
+// Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
+
+// You need to return the highest scoring word as a string.
+
+// If two words score the same, return the word that appears earliest in the original string.
+
+// All letters will be lowercase and all inputs will be valid.
+
+function high(x) {}
+
+
+
+// Day: 6/7/22
+
+// Today's Progress:
+
+// Thoughts:
+
+// Link(s) to work: https://www.codewars.com/kata/5266876b8f4bf2da9b000362/train/javascript
+
+
+// You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+
+// Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
+
+// []                                -->  "no one likes this"
+// ["Peter"]                         -->  "Peter likes this"
+// ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+// ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+// ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+
+// Note: For 4 or more names, the number in "and 2 others" simply increases.
+
+function likes(names) {
+	let str;
+	if (names.length <= 1) {
+		str = `${!names.length ? 'no one' : names.toString()} likes this`
+	} else if(names.length <= 2) {
+		str = `${names.join(' and ')} like this`
+	} else {
+		let num = names.length - 2
+		str = `${names.slice(0, - num).join(', ')} and ${names.length > 3 ? num + ' others' : names.slice(-1)
+		} like this`
+	}
+	return str
+}
+
+
+// console.log(likes([]))
+// console.log(likes(['Peter']))
+// console.log(likes(['Jacob', 'Alex']))
+// console.log(likes(['Max', 'John', 'Mark']))
+// console.log(likes(['Max', 'John', 'Mark', 'Keisha']))
+// console.log(likes(['Max', 'John', 'Mark', 'Keisha', 'Ray']))
+// console.log(likes(['Max', 'John', 'Mark', 'Keisha', 'Ray', 'Roscoe']))
