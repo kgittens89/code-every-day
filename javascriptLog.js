@@ -428,8 +428,36 @@ function findOdd(A) {
 
 // All letters will be lowercase and all inputs will be valid.
 
-function high(x) {}
+function high(x) {
+	// Initialize highestScore variable, maybe make obj to hold index of word
+	let highestScore = { score: 0, index: 0 }
+	// Seperate the string into array of words, split(), wordsArr
+	let wordsArr = x.split(' ')
+	// Loop through array wordsArr
+	wordsArr.forEach((word, index) => {
+		// Initialize curScore variable
+		let curScore = 0;
+		// In each loop, loop again through string
+		[...word].forEach((letter, i) => {
+		// 	// Evaluate each letter and increment curScore
+			// console.log(word.charCodeAt(i));
+			curScore += (word.charCodeAt(i) - 96)
+		})
+		// Compare curScore & highestScore, assign greatest to highestScore
+		// console.log(word, curScore)
+		if (curScore > highestScore.score) {
+			highestScore = { score: curScore, index: index }
+		}
+	})
+	// Return highestScore index value
+	return wordsArr[highestScore.index]
+}
 
+// console.log(high('man i need a taxi up to ubud'));
+// console.log(high('what time are we climbing up the volcano'))
+// console.log(high('take me to semynak'));
+// console.log(high('aa b'));
+// console.log(high('b aa')); 
 
 
 // Day: 6/7/22
