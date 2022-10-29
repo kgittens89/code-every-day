@@ -1,4 +1,3 @@
-
 // TEMPLATE //
 // Day:
 
@@ -7,8 +6,6 @@
 // Thoughts:
 
 // Link(s) to work:
-
-
 
 // Count the number of Duplicates
 // Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
@@ -101,49 +98,46 @@ function rowSumOddNumbers(n) {
 // "The_Stealth_Warrior" gets converted to "TheStealthWarrior"
 
 function toCamelCase(str) {
-    // const regexp = /^[\w-_]+$/g
-    const regexp = /[_-]+/g
-    str.replaceAll(regexp, 'a')
-    console.log(str)
-    console.log(regexp)
+	// const regexp = /^[\w-_]+$/g
+	const regexp = /[_-]+/g;
+	str.replaceAll(regexp, 'a');
+	console.log(str);
+	console.log(regexp);
 }
 
 // toCamelCase('the_stealth_warrior');
 // toCamelCase('The-Stealth-Warrior');
 // toCamelCase('A-B-C');
 
-
 // Day: 3/12/22 10:00am
 
-// Today's Progress: Warming up fo the day 
+// Today's Progress: Warming up fo the day
 
-// Thoughts: Felt pretty comfortable with this one. 
+// Thoughts: Felt pretty comfortable with this one.
 
 // Link(s) to work: https://www.codewars.com/kata/5259b20d6021e9e14c0010d4/train/javascript
 
 // Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
 
 function reverseWords(str) {
-	let splitStr = str.split(' ')
+	let splitStr = str.split(' ');
 	splitStr.forEach((word, index) => {
 		if (word.length) {
-			let splitWord = word.split('').reverse().join('')
-			splitStr[index]= splitWord
+			let splitWord = word.split('').reverse().join('');
+			splitStr[index] = splitWord;
 		}
-	})
+	});
 	return splitStr.join(' ');
 }
-
 
 reverseWords('The quick brown fox jumps over the lazy dog.');
 reverseWords('apple');
 reverseWords('a b c d');
 reverseWords('double  spaced  words');
 
-
 // Day: 3/20/22 10:43pm
 
-// Today's Progress: Feel like I need to work through one 
+// Today's Progress: Feel like I need to work through one
 
 // Thoughts:
 
@@ -157,12 +151,11 @@ reverseWords('double  spaced  words');
 
 function domainName(url) {
 	//your code here
-	let fullUrl = new URL(url)
-	console.log(fullUrl)
-	let hostName = fullUrl.hostname
-	hostName = hostName.substring(0, hostName.indexOf('.'))
-	console.log(hostName)
-
+	let fullUrl = new URL(url);
+	console.log(fullUrl);
+	let hostName = fullUrl.hostname;
+	hostName = hostName.substring(0, hostName.indexOf('.'));
+	console.log(hostName);
 }
 
 // domainName('http://google.com');
@@ -170,13 +163,12 @@ function domainName(url) {
 // domainName('www.xakep.ru');
 // domainName('https://youtube.com');
 
-
 function smallestPositiveInteger(A) {
-	const sortedArr = A.sort()
+	const sortedArr = A.sort();
 	for (let i = 0; i < sortedArr.length; i++) {
 		if (!sortedArr.includes(i) && i > 0) {
-			return i
-		} 
+			return i;
+		}
 	}
 	return sortedArr[sortedArr.length - 1] + 1;
 }
@@ -184,7 +176,6 @@ function smallestPositiveInteger(A) {
 // console.log(smallestPositiveInteger([1, 3, 6, 4, 1, 2]))
 // console.log(smallestPositiveInteger([1, 2, 3]))
 // console.log(smallestPositiveInteger([-1, -3]))
-
 
 // A Nice array is defined to be an array where for every value n in the array, there is also an element n - 1 or n + 1 in the array.
 
@@ -207,21 +198,19 @@ function smallestPositiveInteger(A) {
 
 function isNice(arr) {
 	if (!arr.length) {
-		return false
+		return false;
 	} else {
-		return arr.every(num => {
-			return arr.includes(num + 1) || arr.includes(num - 1)
-		})
+		return arr.every((num) => {
+			return arr.includes(num + 1) || arr.includes(num - 1);
+		});
 	}
 }
-
 
 // console.log(isNice([2, 10, 9, 3]))
 // console.log(isNice([3, 4, 5, 7]))
 // console.log(isNice([4, 2, 3]))
 // console.log(isNice([4, 2, 1]))
 // console.log(isNice([]))
-
 
 // function solution(S, K) {
 // 	const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -231,7 +220,6 @@ function isNice(arr) {
 
 // console.log(solution('Wed', 2))
 // console.log(solution('Sat', 23));
-
 
 // function solution(A) {
 // 	if (A.length <= 2) return A.length;
@@ -260,10 +248,9 @@ function isNice(arr) {
 // console.log(solution([0, 5, 4, 4, 5, 12]));
 // console.log(solution([4, 4]));
 
-
 // Day:3/30/22
 
-// Today's Progress: Well today I made it through to the technical round at Revelry!! 
+// Today's Progress: Well today I made it through to the technical round at Revelry!!
 
 // Thoughts:
 
@@ -283,30 +270,28 @@ function isNice(arr) {
 
 function anagrams(word, words) {
 	// seperate word into array of individual letters
-	const wordToLetters = word.split('').sort().join('')
+	const wordToLetters = word.split('').sort().join('');
 	// console.log(wordToLetters)
 	// iterate through each word in words array
 	// let anagrams = []
 	let anagrams = words.filter((word, index) => {
-		return word.split('').sort().join('') === wordToLetters
-		// break each word down into letters and compare to first 'word>letters' array to broken down word. 
+		return word.split('').sort().join('') === wordToLetters;
+		// break each word down into letters and compare to first 'word>letters' array to broken down word.
 		// const wordToCompare = word.split('').sort().join('')
 		// console.log(wordToCompare)
 		// // if letters match, push into array to hold anagrams
 		// if (wordToCompare === wordToLetters) {
 		// 	anagrams.push(words[index])
 		// }
-	})
+	});
 	// console.log(words)
 	// return anagram array
-	return anagrams
+	return anagrams;
 }
 
 // console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
 // console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
 // console.log(anagrams('laser', ['lazing', 'lazy', 'lacer']));
-
-
 
 // Day: 4/5/22
 
@@ -322,25 +307,24 @@ function anagrams(word, words) {
 // pigIt('Hello world !');     // elloHay orldway !
 
 function pigIt(str) {
-	let words = str.split(' ')
+	let words = str.split(' ');
 	// console.log(words)
-	let pigLatin = words.map(word => {
-		let splitWord = word.split('')
+	let pigLatin = words.map((word) => {
+		let splitWord = word.split('');
 		// let firstLetter = splitWord.shift()
 		// console.log(firstLetter)
 		// let pig = splitWord.splice(splitWord.length, 0, firstLetter);
-		if ((/[a-zA-Z]/).test(splitWord)) {
+		if (/[a-zA-Z]/.test(splitWord)) {
 			splitWord.splice(splitWord.length, 0, `${splitWord.shift()}ay`);
 		}
-		return splitWord.join('')
+		return splitWord.join('');
 		// console.log(splitWord.splice(splitWord.shift(), 0, word.length));
-	})
-	return pigLatin.join(' ')
+	});
+	return pigLatin.join(' ');
 }
 
 // console.log(pigIt('Pig latin is cool'))
 // console.log(pigIt('This is my string !'))
-
 
 // Day: 4/13/22
 
@@ -349,7 +333,6 @@ function pigIt(str) {
 // Thoughts:
 
 // Link(s) to work: https://www.codewars.com/kata/5467e4d82edf8bbf40000155/train/javascript
-
 
 // Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
 
@@ -360,15 +343,14 @@ function pigIt(str) {
 // Input: 123456789 Output: 987654321
 
 function descendingOrder(n) {
-	return parseInt(n
-		.toString()
-		.split('')
-		.sort((a, b) => b - a)
-		.join('')
-	)
+	return parseInt(
+		n
+			.toString()
+			.split('')
+			.sort((a, b) => b - a)
+			.join('')
+	);
 }
-
-
 
 // console.log(descendingOrder(0))
 // console.log(descendingOrder(1))
@@ -376,9 +358,6 @@ function descendingOrder(n) {
 // console.log(descendingOrder(15))
 // console.log(descendingOrder(1021))
 // console.log(descendingOrder(123456789))
-
-
-
 
 // Day:4/18/22
 
@@ -388,21 +367,20 @@ function descendingOrder(n) {
 
 // Link(s) to work: https://www.codewars.com/kata/54da5a58ea159efa38000836/train/javascript
 
-
 // Given an array of integers, find the one that appears an odd number of times.
 
 // There will always be only one integer that appears an odd number of times.
 
 function findOdd(A) {
-	if (A.length === 1) return A[0]
+	if (A.length === 1) return A[0];
 	let count;
 	let oddNumber;
 	A.forEach((num, i, arr) => {
-		count = arr.filter(numbers => num === numbers)
-		console.log(count)
-		if(!count.length % 2 === 0) oddNumber = num
-	})
-	return oddNumber
+		count = arr.filter((numbers) => num === numbers);
+		console.log(count);
+		if (!count.length % 2 === 0) oddNumber = num;
+	});
+	return oddNumber;
 }
 
 // console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
@@ -411,10 +389,6 @@ function findOdd(A) {
 // console.log(findOdd([10]));
 // console.log(findOdd([1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1]));
 // console.log(findOdd([5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10]));
-
-
-
-
 
 // Link : https://www.codewars.com/kata/57eb8fcdf670e99d9b000272/train/javascript
 
@@ -430,35 +404,34 @@ function findOdd(A) {
 
 function high(x) {
 	// Initialize highestScore variable, maybe make obj to hold index of word
-	let highestScore = { score: 0, index: 0 }
+	let highestScore = { score: 0, index: 0 };
 	// Seperate the string into array of words, split(), wordsArr
-	let wordsArr = x.split(' ')
+	let wordsArr = x.split(' ');
 	// Loop through array wordsArr
 	wordsArr.forEach((word, index) => {
 		// Initialize curScore variable
 		let curScore = 0;
 		// In each loop, loop again through string
 		[...word].forEach((letter, i) => {
-		// 	// Evaluate each letter and increment curScore
+			// 	// Evaluate each letter and increment curScore
 			// console.log(word.charCodeAt(i));
-			curScore += (word.charCodeAt(i) - 96)
-		})
+			curScore += word.charCodeAt(i) - 96;
+		});
 		// Compare curScore & highestScore, assign greatest to highestScore
 		// console.log(word, curScore)
 		if (curScore > highestScore.score) {
-			highestScore = { score: curScore, index: index }
+			highestScore = { score: curScore, index: index };
 		}
-	})
+	});
 	// Return highestScore index value
-	return wordsArr[highestScore.index]
+	return wordsArr[highestScore.index];
 }
 
 // console.log(high('man i need a taxi up to ubud'));
 // console.log(high('what time are we climbing up the volcano'))
 // console.log(high('take me to semynak'));
 // console.log(high('aa b'));
-// console.log(high('b aa')); 
-
+// console.log(high('b aa'));
 
 // Day: 6/7/22
 
@@ -467,7 +440,6 @@ function high(x) {
 // Thoughts:
 
 // Link(s) to work: https://www.codewars.com/kata/5266876b8f4bf2da9b000362/train/javascript
-
 
 // You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
 
@@ -484,17 +456,17 @@ function high(x) {
 function likes(names) {
 	let str;
 	if (names.length <= 1) {
-		str = `${!names.length ? 'no one' : names.toString()} likes this`
-	} else if(names.length <= 2) {
-		str = `${names.join(' and ')} like this`
+		str = `${!names.length ? 'no one' : names.toString()} likes this`;
+	} else if (names.length <= 2) {
+		str = `${names.join(' and ')} like this`;
 	} else {
-		let num = names.length - 2
-		str = `${names.slice(0, - num).join(', ')} and ${names.length > 3 ? num + ' others' : names.slice(-1)
-		} like this`
+		let num = names.length - 2;
+		str = `${names.slice(0, -num).join(', ')} and ${
+			names.length > 3 ? num + ' others' : names.slice(-1)
+		} like this`;
 	}
-	return str
+	return str;
 }
-
 
 // console.log(likes([]))
 // console.log(likes(['Peter']))
@@ -503,3 +475,36 @@ function likes(names) {
 // console.log(likes(['Max', 'John', 'Mark', 'Keisha']))
 // console.log(likes(['Max', 'John', 'Mark', 'Keisha', 'Ray']))
 // console.log(likes(['Max', 'John', 'Mark', 'Keisha', 'Ray', 'Roscoe']))
+
+// Day: 10/28/22
+
+// Today's Progress:
+
+// Thoughts:
+
+// Link(s) to work: https://www.codewars.com/kata/5546180ca783b6d2d5000062/train/javascript
+
+// Complete the function that returns an array of length n, starting with the given number x and the squares of the previous number. If n is negative or zero, return an empty array/list.
+
+// 2, 5  -->  [2, 4, 16, 256, 65536]
+// 3, 3  -->  [3, 9, 81]
+
+function squares(x, n) {
+	if (n <= 0) return [];
+	let arr = [];
+	let i = 0;
+
+	do {
+		arr.push(x);
+		x = x * x;
+		i++;
+	} while (i < n);
+	return arr;
+}
+
+// console.log(squares(2, 5));
+// console.log(squares(3, 3));
+// console.log(squares(5, 3));
+// console.log(squares(10, 4));
+// console.log(squares(2, 0));
+// console.log(squares(2, -5));
